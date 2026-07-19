@@ -7,7 +7,7 @@ Initial public draft of the Autonomous Company Interface specification.
 ### Highlights
 
 - Five abstract manifest types: Identity, Capability, Knowledge, Trust, Agent
-- Discovery chain via `llms.txt`
+- Discovery chain via `llms.txt` plus `/.well-known/aci` and DNS TXT records
 - Three conformance levels (L1 Discovery, L2 Understanding, L3 Interaction)
 - Dynamic validator with YAML schema loading
 - Open-source validator CLI
@@ -22,3 +22,9 @@ Initial public draft of the Autonomous Company Interface specification.
 ### Reference Implementation
 
 - Empire Labs (https://empirelabs.com.au) — Level 3 compliant, 100/100 score
+
+### RFC-002 — Discovery Improvements (2026-07-19)
+
+- Added §4.2: Standardized `/.well-known/aci` discovery file (RFC 8615 pattern)
+- Added §4.3: DNS TXT record discovery at `_aci.<domain>`
+- Added §4.4: Discovery resolution order priority chain
