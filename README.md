@@ -1,6 +1,8 @@
 # Autonomous Company Interface (ACI)
 
-**Status:** Draft Specification v0.9 (seeking independent implementations and feedback)
+**Status:** Draft Specification v0.9
+
+> **Seeking three independent implementations for ACI v1.0** — [Track progress](https://github.com/narko4u/aci-spec/issues/6)
 
 An open specification for describing organizations to autonomous agents through structured, machine-readable contracts.
 
@@ -14,16 +16,28 @@ ACI enables autonomous systems to:
 
 ---
 
-## Quick Start
+## Get started in 5 minutes
+
+**Option A — Fork the template:**
+
+[![Use this template](https://img.shields.io/badge/Fork%20the-template-blue)](https://github.com/narko4u/aci-pages-template/generate)
+
+Replace the placeholders with your organization details and deploy to GitHub Pages. No build tools required.
+
+**Option B — Run the Explorer:**
 
 ```bash
-# Validate an ACI implementation
-python3 validator/validate.py https://example.com
-
-# Example output:
-#   Conformance: ACI Level 3
-#   Overall: 95/100 — FULL COMPLIANCE
+# Zero-dependency discovery — see what an ACI-compatible organization exposes
+python3 demo/aci-explorer.py empirelabs.com.au
 ```
+
+**Option C — Validate a deployment:**
+
+```bash
+python3 validator/validate.py https://your-org.github.io/your-site
+```
+
+---
 
 ## Contents
 
@@ -31,9 +45,24 @@ python3 validator/validate.py https://example.com
 - [schema/](./schema/) — Machine-readable YAML schemas for all five manifest types
 - [validator/](./validator/) — Open-source ACI Validator CLI
 - [examples/](./examples/) — Example implementations across all conformance levels
+- [demo/aci-explorer.py](./demo/aci-explorer.py) — Zero-dependency CLI discovery tool
 
 ---
 
-**Reference implementation:** [Empire Labs](https://empirelabs.com.au)
+## Quick reference
 
-**License:** CC BY 4.0 (specification) / MIT (validator, schemas, examples)
+| Resource | Link |
+|----------|------|
+| Specification | [SPEC.md](./SPEC.md) |
+| Schema (YAML) | [schema/](./schema/) |
+| Validator | [validator/validate.py](./validator/validate.py) |
+| Explorer | [demo/aci-explorer.py](./demo/aci-explorer.py) |
+| Example implementations | [examples/](./examples/) |
+| Deployment template | [narko4u/aci-pages-template](https://github.com/narko4u/aci-pages-template) |
+| Live implementation | [empirelabs.com.au](https://empirelabs.com.au) |
+
+---
+
+## License
+
+**CC BY 4.0** (specification) / **MIT** (validator, schemas, examples, explorer)
