@@ -478,7 +478,7 @@ This follows the approach used by OpenAPI, JSON Schema, and similar standards.
 The primary serialization format for ACI manifests is JSON. All examples in this specification
 use JSON.
 
-- Manifests SHALL be valid JSON (RFC 7159)
+- Manifests SHALL be valid JSON (RFC 8259)
 - File extension SHOULD be `.json`
 - MIME type SHOULD be `application/json`
 

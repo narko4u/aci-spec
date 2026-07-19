@@ -1,4 +1,4 @@
-# ACI Identity Manifest Schema v1.0
+# ACI Identity Manifest Schema v0.9
 # See SPEC.md §5 for normative field descriptions
 
 label: Identity Manifest

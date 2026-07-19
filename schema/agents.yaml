@@ -1,4 +1,4 @@
-# ACI Agent Manifest Schema v1.0
+# ACI Agent Manifest Schema v0.9
 # See SPEC.md §9 for normative field descriptions
 
 label: Agent Manifest

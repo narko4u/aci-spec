@@ -1,4 +1,4 @@
-# ACI Capability Manifest Schema v1.0
+# ACI Capability Manifest Schema v0.9
 # See SPEC.md §6 for normative field descriptions
 
 label: Capability Manifest
