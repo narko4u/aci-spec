@@ -12,6 +12,7 @@ v0.9 — Draft
        ▼
 v1.0 — Stable
   │
+  ├── Discovery improvements (DNS + /.well-known/aci) ✓
   ├── Community RFCs begin
   ├── Reference test suite
   └── Certification framework
@@ -19,15 +20,15 @@ v1.0 — Stable
        ▼
 v1.x — Community Growth
   │
-  ├── RFC-001: YAML support
-  ├── RFC-002: Discovery improvements
   ├── RFC-003: Authentication declarations
-  ├── RFC-004: Digital signatures
-  └── RFC-005: Ontology alignment
+  ├── RFC-00X: TBD — driven by implementation feedback
+  └── Adoption milestones
        │
        ▼
 v2.0 — Extensions
   │
+  ├── RFC-004: Digital signatures (deferred from v1.x)
+  ├── RFC-005: Ontology alignment (deferred from v1.x)
   ├── Proven extension patterns
   ├── Domain-specific profiles
   └── Interoperability test suite

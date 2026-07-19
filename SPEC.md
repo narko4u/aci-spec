@@ -152,6 +152,8 @@ boundary.
 ## 4. Discovery
 
 An autonomous agent discovers an organization's ACI manifests through a discovery chain.
+Organizations SHOULD support multiple discovery mechanisms. Agents SHOULD attempt them
+in resolution order (§4.4).
 
 ### 4.1 Entry Point: `llms.txt`
 
@@ -170,16 +172,85 @@ Example:
 - [Agent Manifest](https://example.com/agents.json)
 ```
 
-### 4.2 Alternative Entry Points
+### 4.2 Well-Known Path: `/.well-known/aci`
 
-Organizations MAY also:
+Organizations SHOULD publish a discovery file at `/.well-known/aci` on their primary domain,
+following the pattern established by [RFC 8615](https://www.rfc-editor.org/rfc/rfc8615).
 
-- Include manifest links in `sitemap.xml`
-- Reference manifests via `<link>` tags in HTML `<head>`
-- Register manifests in a `/.well-known/` directory (e.g., `/.well-known/agents.json`)
-- Advertise manifests through DNS TXT records or other service discovery mechanisms
+This file MUST be valid JSON and MUST conform to the following schema:
 
-### 4.3 Cross-Referencing
+```jsonc
+{
+  "aci_version": "0.9",
+  "last_updated": "2026-07-19T00:00:00Z",
+  "manifests": {
+    "identity": "https://example.com/identity.json",
+    "capability": "https://example.com/capabilities.json",
+    "knowledge": "https://example.com/knowledge.json",
+    "trust": "https://example.com/trust.json",
+    "agent": "https://example.com/agents.json"
+  }
+}
+```
+
+**Fields:**
+
+| Field | Requirement | Description |
+|-------|-------------|-------------|
+| `aci_version` | REQUIRED | Version of the ACI specification this deployment targets |
+| `last_updated` | REQUIRED | ISO 8601 timestamp of last change to this discovery file |
+| `manifests` | REQUIRED | Object mapping manifest type to its URL. At minimum, manifests required by the claimed conformance level MUST be present |
+
+The `manifests` object MAY include additional keys for custom or extension manifest types.
+
+### 4.3 DNS TXT Record Discovery
+
+Organizations MAY publish a DNS TXT record at `_aci.<domain>` to enable discovery before any
+HTTP request is made.
+
+**Format:**
+
+```
+_aci.<domain>.  TXT  "v=aci0.9; url=https://example.com/identity.json"
+```
+
+**Fields:**
+
+| Field | Requirement | Description |
+|-------|-------------|-------------|
+| `v` | REQUIRED | Protocol version identifier (e.g., `aci0.9`) |
+| `url` | REQUIRED | HTTPS URL of the Identity Manifest (see §5) |
+
+**Rules:**
+
+- The URL MUST be HTTPS
+- The URL SHOULD point to the Identity Manifest. Agents SHALL navigate from Identity
+  to other manifests via the `discovery` cross-references (§4.5)
+- If multiple TXT records exist at `_aci.<domain>`, agents SHOULD select the record with the
+  highest `v` (version) value they support
+
+Example resolution:
+
+```bash
+dig TXT _aci.example.com +short
+# "v=aci0.9; url=https://example.com/identity.json"
+```
+
+### 4.4 Discovery Resolution Order
+
+Agents SHOULD attempt the following discovery mechanisms in order:
+
+1. **`/.well-known/aci`** — Fastest single-fetch resolution. All manifest URLs in one call.
+2. **`llms.txt`** — Falls back to the community-standard entry point.
+3. **DNS TXT record** — Pre-HTTP discovery at `_aci.<domain>`. Useful for agents that
+   perform bulk domain reconnaissance.
+4. **Other mechanisms** — `sitemap.xml`, `<link>` tags in HTML `<head>`, or custom
+   discovery protocols.
+
+An agent MAY stop at the first successful mechanism. An agent SHOULD validate that the
+manifests discovered through any mechanism are consistent (same publisher, same version).
+
+### 4.5 Cross-Referencing
 
 Each manifest SHOULD include a `discovery` section linking to the other manifests, allowing an
 agent that discovers any single manifest to navigate to the full set.
