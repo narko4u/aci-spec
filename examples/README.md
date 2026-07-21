@@ -73,4 +73,4 @@ python3 ../../validator/validate.py http://localhost:8000
 4. Add agent endpoints for Level 3
 5. Add AIP-governed actions in `capabilities.json` for Level 4
 
-> **Tip:** Author your manifests in [AJSON](https://github.com/narko4u/ajson) — a superset of JSON with comments, multi-line strings, and reusable references. Compile to canonical JSON with `pip install ajson && ajson compile manifest.ajson -o manifest.json`.
+> **Tip:** Author your manifests in [AJSON](https://github.com/narko4u/ajson) — a superset of JSON with comments, multi-line strings, and reusable references. Compile to canonical JSON with `pip install ajson-spec && ajson compile manifest.ajson -o manifest.json`.
