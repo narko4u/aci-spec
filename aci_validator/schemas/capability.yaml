@@ -1,0 +1,21 @@
+# ACI Capability Manifest Schema v0.9
+# See SPEC.md §6 for normative field descriptions
+
+label: Capability Manifest
+url_hints:
+  - capabilit
+  - product
+  - offerings
+required:
+  - manifest_version
+  - last_updated
+  - publisher
+optional:
+  - schema_version
+  - industries
+  - pricing_model
+  - documentation
+content_blocks:
+  - products
+  - services
+  - solutions

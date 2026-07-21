@@ -1,0 +1,16 @@
+# ACI Agent Manifest Schema v0.9
+# See SPEC.md §9 for normative field descriptions
+
+label: Agent Manifest
+url_hints:
+  - agent
+  - mcp
+  - agents
+required:
+  - manifest_version
+  - last_updated
+  - publisher
+optional:
+  - schema_version
+content_blocks:
+  - agents

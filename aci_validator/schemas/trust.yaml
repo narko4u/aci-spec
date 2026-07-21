@@ -1,0 +1,21 @@
+# ACI Trust Manifest Schema v0.9
+# See SPEC.md §8 for normative field descriptions
+
+label: Trust Manifest
+url_hints:
+  - trust
+  - assurance
+  - verification
+required:
+  - manifest_version
+  - last_updated
+  - publisher
+optional:
+  - schema_version
+  - certifications
+  - patents
+  - compliance
+  - signatures
+  - history
+content_blocks:
+  - assertions

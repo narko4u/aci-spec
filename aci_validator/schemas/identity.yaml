@@ -1,0 +1,21 @@
+# ACI Identity Manifest Schema v0.9
+# See SPEC.md §5 for normative field descriptions
+
+label: Identity Manifest
+url_hints:
+  - identity
+  - company
+required:
+  - manifest_version
+  - last_updated
+  - publisher
+  - identifiers
+optional:
+  - schema_version
+  - jurisdiction
+  - registration_number
+  - website
+  - contact
+  - social
+  - brand
+  - description

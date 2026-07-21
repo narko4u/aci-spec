@@ -2,6 +2,11 @@
 
 **Status:** Draft Specification v0.9
 
+[![PyPI version](https://img.shields.io/pypi/v/aci-spec?color=blue)](https://pypi.org/project/aci-spec/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/aci-spec)](https://pypi.org/project/aci-spec/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/spec-CC%20BY%204.0-lightgrey)](LICENSE-CC-BY-4.0)
+
 > **Seeking three independent implementations for ACI v1.0** — [Track progress](https://github.com/narko4u/aci-spec/issues/6)
 
 An open specification for describing organizations to autonomous agents through structured, machine-readable contracts.
@@ -18,20 +23,33 @@ ACI enables autonomous systems to:
 
 ## Get started in 5 minutes
 
-**Option A — Fork the template:**
+**Option A — Install from PyPI (recommended):**
+
+```bash
+pip install aci-spec
+```
+
+Then validate any ACI deployment:
+
+```bash
+aci-validate empirelabs.com.au
+aci-explore empirelabs.com.au
+```
+
+**Option B — Fork the template:**
 
 [![Use this template](https://img.shields.io/badge/Fork%20the-template-blue)](https://github.com/narko4u/aci-pages-template/generate)
 
 Replace the placeholders with your organization details and deploy to GitHub Pages. No build tools required.
 
-**Option B — Run the Explorer:**
+**Option C — Run the Explorer (zero-dep, from repo):**
 
 ```bash
 # Zero-dependency discovery — see what an ACI-compatible organization exposes
 python3 demo/aci-explorer.py empirelabs.com.au
 ```
 
-**Option C — Validate a deployment:**
+**Option D — Validate a deployment (from repo):**
 
 ```bash
 python3 validator/validate.py https://your-org.github.io/your-site
@@ -54,6 +72,7 @@ python3 validator/validate.py https://your-org.github.io/your-site
 
 | Resource | Link |
 |----------|------|
+| 📦 Package | `pip install aci-spec` — `aci-validate` / `aci-explore` |
 | Specification | [SPEC.md](./SPEC.md) |
 | Schema (YAML) | [schema/](./schema/) |
 | Validator | [validator/validate.py](./validator/validate.py) |
