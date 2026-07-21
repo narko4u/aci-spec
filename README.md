@@ -44,8 +44,9 @@ python3 validator/validate.py https://your-org.github.io/your-site
 - [SPEC.md](./SPEC.md) — The specification
 - [schema/](./schema/) — Machine-readable YAML schemas for all five manifest types
 - [validator/](./validator/) — Open-source ACI Validator CLI
-- [examples/](./examples/) — Example implementations across all conformance levels
+- [examples/](./examples/) — Example implementations (JSON + AJSON authoring format)
 - [demo/aci-explorer.py](./demo/aci-explorer.py) — Zero-dependency CLI discovery tool
+- [AJSON](https://github.com/narko4u/ajson) — Manifest authoring format with comments, refs, and canonical compilation
 
 ---
 
