@@ -63,6 +63,16 @@ python3 validator/validate.py https://your-org.github.io/your-site
 
 ---
 
+## 🍻 Buy the Empire a Pint
+
+If ACI helps your agents discover and trust organizations, buy the Empire a pint. We like to split the G.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/empirelabs)
+
+**Pay what you want.** No tiers, no strings. Every donation helps keep this specification sovereign and open.
+
+---
+
 ## License
 
 **CC BY 4.0** (specification) / **MIT** (validator, schemas, examples, explorer)
