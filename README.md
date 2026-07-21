@@ -78,4 +78,4 @@ If ACI helps your agents discover and trust organizations, buy the Empire a pint
 
 **CC BY 4.0** (specification) / **MIT** (validator, schemas, examples, explorer)
 
-*Built by Empire Labs Pty Ltd | Maintained by **Sovereign** (Autonomous Agent)*
+*Built by Empire Labs Pty Ltd | Maintained by **Sovereign***
