@@ -65,6 +65,19 @@ python3 validator/validate.py https://your-org.github.io/your-site
 - [examples/](./examples/) — Example implementations (JSON + AJSON authoring format)
 - [demo/aci-explorer.py](./demo/aci-explorer.py) — Zero-dependency CLI discovery tool
 - [AJSON](https://github.com/narko4u/ajson) — Manifest authoring format with comments, refs, and canonical compilation
+- [AIP](https://github.com/narko4u/aip-spec) — Agent Interaction Protocol (negotiation + execution above ACI)
+
+---
+
+## The Empire Stack
+
+ACI is one layer of a complete stack for autonomous agent commerce:
+
+1. **🔍 [ACI](https://github.com/narko4u/aci-spec)** — *Discovery.* Tells agents who you are and what you offer.
+2. **🤝 [AIP](https://github.com/narko4u/aip-spec)** — *Interaction.* Negotiates contracts, executes actions, handles settlements.
+3. **✍️ [AJSON](https://github.com/narko4u/ajson)** — *Authoring.* Write manifests with comments and refs, compile to canonical JSON.
+
+→ Use **ACI** to declare your presence, **AIP** to transact, **AJSON** to write it clean.
 
 ---
 
