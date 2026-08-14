@@ -9,6 +9,8 @@
 
 > **Seeking three independent implementations for ACI v1.0** — [Track progress](https://github.com/narko4u/aci-spec/issues/6)
 
+> **📢 Community feedback window: open until 2026-09-15.** ACI is heading to v1.0 and we want your input before we freeze the core. Review the [SPEC](SPEC.md), try the [CLI](https://pypi.org/project/aci-spec/), and tell us what breaks. Post via [GitHub Discussions](https://github.com/narko4u/aci-spec/discussions) or issues. Every substantive comment gets a reply.
+
 An open specification for describing organizations to autonomous agents through structured, machine-readable contracts.
 
 ACI enables autonomous systems to:
