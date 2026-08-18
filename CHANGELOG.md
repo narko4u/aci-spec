@@ -1,6 +1,6 @@
 # Changelog
 
-## draft-v0.9 — 2026-07-19
+## draft-v0.9 - 2026-07-19
 
 Initial public draft of the Autonomous Company Interface specification.
 
@@ -21,9 +21,9 @@ Initial public draft of the Autonomous Company Interface specification.
 
 ### Reference Implementation
 
-- Empire Labs (https://empirelabs.com.au) — Level 3 compliant, 100/100 score
+- Empire Labs (https://empirelabs.com.au) - Level 3 compliant, 100/100 score
 
-### RFC-002 — Discovery Improvements (2026-07-19)
+### RFC-002 - Discovery Improvements (2026-07-19)
 
 - Added §4.2: Standardized `/.well-known/aci` discovery file (RFC 8615 pattern)
 - Added §4.3: DNS TXT record discovery at `_aci.<domain>`
