@@ -10,27 +10,27 @@ All examples use the fictional **NovaDynamics Inc.** to illustrate progressive a
 
 ```
 examples/
-├── minimal/       # Identity only (Level 0 — entry point)
+├── minimal/       # Identity only (Level 0 - entry point)
 │   ├── llms.txt
 │   └── identity.json
-├── level1/        # Identity + Capability (Level 1 — Discovery)
+├── level1/        # Identity + Capability (Level 1 - Discovery)
 │   ├── llms.txt
 │   ├── identity.json
 │   └── capabilities.json
-├── level2/        # Identity + Capability + Knowledge + Trust (Level 2 — Understanding)
+├── level2/        # Identity + Capability + Knowledge + Trust (Level 2 - Understanding)
 │   ├── llms.txt
 │   ├── identity.json
 │   ├── capabilities.json
 │   ├── knowledge.json
 │   └── trust.json
-├── level3/        # All 5 manifests (Level 3 — Interaction)
+├── level3/        # All 5 manifests (Level 3 - Interaction)
 │   ├── llms.txt
 │   ├── identity.json
 │   ├── capabilities.json
 │   ├── knowledge.json
 │   ├── trust.json
 │   └── agents.json
-├── level4/        # All 5 manifests + AIP Actions (Level 4 — Governed Interaction)
+├── level4/        # All 5 manifests + AIP Actions (Level 4 - Governed Interaction)
 │   ├── llms.txt
 │   ├── identity.json
 │   ├── capabilities.json
@@ -67,10 +67,10 @@ python3 ../../validator/validate.py http://localhost:8000
 
 ## Building Your Own Implementation
 
-1. Start with `minimal/` — publish just an identity manifest
+1. Start with `minimal/` - publish just an identity manifest
 2. Add `capabilities.json` for Level 1
 3. Expand with knowledge and trust manifests for Level 2
 4. Add agent endpoints for Level 3
 5. Add AIP-governed actions in `capabilities.json` for Level 4
 
-> **Tip:** Author your manifests in [AJSON](https://github.com/narko4u/ajson) — a superset of JSON with comments, multi-line strings, and reusable references. Compile to canonical JSON with `pip install ajson-spec && ajson compile manifest.ajson -o manifest.json`.
+> **Tip:** Author your manifests in [AJSON](https://github.com/narko4u/ajson) - a superset of JSON with comments, multi-line strings, and reusable references. Compile to canonical JSON with `pip install ajson-spec && ajson compile manifest.ajson -o manifest.json`.

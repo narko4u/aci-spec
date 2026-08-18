@@ -2,7 +2,7 @@
 
 **Version 0.9 (Draft)**
 
-> How the specification evolves — RFC process, review, and approval.
+> How the specification evolves - RFC process, review, and approval.
 
 ---
 

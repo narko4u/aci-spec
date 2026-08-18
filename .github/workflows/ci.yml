@@ -6,8 +6,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  validate:
+  validate-matrix:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,3 +42,13 @@ jobs:
               json.load(open(f))
           print(f"{len(files)} example JSON files parse OK")
           EOF
+
+  # Aggregator: branch protection requires a check named "validate", but
+  # matrix jobs report as "validate (3.x)". This job produces a check that
+  # matches the required context and only passes when the matrix legs pass.
+  validate:
+    runs-on: ubuntu-latest
+    needs: validate-matrix
+    steps:
+      - name: All validation legs passed
+        run: echo "validate matrix completed"

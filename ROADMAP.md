@@ -3,14 +3,14 @@
 This is a roadmap for the specification, not a product roadmap. It shows where the standard is headed and what milestones need to be met before advancing.
 
 ```
-v0.9 — Draft
+v0.9 - Draft
   │
   ├── Independent implementations (3+)
   ├── Community feedback incorporated
   └── Stable core validated
        │
        ▼
-v1.0 — Stable
+v1.0 - Stable
   │
   ├── Discovery improvements (DNS + /.well-known/aci) ✓
   ├── Community RFCs begin
@@ -18,14 +18,14 @@ v1.0 — Stable
   └── Certification framework
        │
        ▼
-v1.x — Community Growth
+v1.x - Community Growth
   │
   ├── RFC-003: Authentication declarations
-  ├── RFC-00X: TBD — driven by implementation feedback
+  ├── RFC-00X: TBD - driven by implementation feedback
   └── Adoption milestones
        │
        ▼
-v2.0 — Extensions
+v2.0 - Extensions
   │
   ├── RFC-004: Digital signatures (deferred from v1.x)
   ├── RFC-005: Ontology alignment (deferred from v1.x)

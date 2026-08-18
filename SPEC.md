@@ -60,7 +60,7 @@ what an organization is, not how it works.
 
 ## 1. Purpose
 
-Autonomous agents — AI systems that act on behalf of users or organizations — need a standard
+Autonomous agents - AI systems that act on behalf of users or organizations - need a standard
 way to discover, understand, verify, and interact with companies they encounter. Traditional
 company websites are optimized for human readers. API documentation targets software developers.
 Neither serves autonomous agents well.
@@ -73,7 +73,7 @@ that organizations publish at a well-known location, enabling autonomous agents 
 - **Verify** its identity and claims through attestations and evidence
 - **Interact** with it through declared agent endpoints and transaction contracts
 
-ACI is not a replacement for websites, APIs, or human relationships. It is a *companion layer* —
+ACI is not a replacement for websites, APIs, or human relationships. It is a *companion layer* -
 machine-readable organizational contract that sits alongside existing channels.
 
 ---
@@ -84,11 +84,11 @@ ACI defines five manifest types. Each represents a distinct facet of organizatio
 
 | Manifest | Purpose |
 |----------|---------|
-| **Identity Manifest** | Who the organization is — name, jurisdiction, identifiers, contact |
-| **Capability Manifest** | What the organization offers — products, services, solutions |
-| **Knowledge Manifest** | What the organization knows — concepts, ontology, domain model |
-| **Trust Manifest** | How the organization verifies its claims — patents, attestations, evidence |
-| **Agent Manifest** | What autonomous agents the organization exposes — endpoints, capabilities, discovery |
+| **Identity Manifest** | Who the organization is - name, jurisdiction, identifiers, contact |
+| **Capability Manifest** | What the organization offers - products, services, solutions |
+| **Knowledge Manifest** | What the organization knows - concepts, ontology, domain model |
+| **Trust Manifest** | How the organization verifies its claims - patents, attestations, evidence |
+| **Agent Manifest** | What autonomous agents the organization exposes - endpoints, capabilities, discovery |
 
 Each manifest is independent but designed to be linked. An agent SHOULD be able to start at any
 manifest and navigate to the others via cross-references.
@@ -106,7 +106,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 ACI defines three conformance levels. An organization claims conformance at a specific level
 only when all requirements of that level are met.
 
-### 3.1 Level 1 — Discovery
+### 3.1 Level 1 - Discovery
 
 Sufficient for an AI agent to know who the organization is and what it does.
 
@@ -116,7 +116,7 @@ Sufficient for an AI agent to know who the organization is and what it does.
 - **Discovery chain** MUST be fully operational (§4)
 - All mandatory fields for Identity and Capability manifests MUST be present
 
-### 3.2 Level 2 — Understanding
+### 3.2 Level 2 - Understanding
 
 Sufficient for an AI agent to reason about the organization's domain and verify its claims.
 
@@ -127,7 +127,7 @@ Sufficient for an AI agent to reason about the organization's domain and verify 
 - All mandatory fields for Knowledge and Trust manifests MUST be present
 - Cross-references between all Level 2 manifests MUST resolve
 
-### 3.3 Level 3 — Interaction
+### 3.3 Level 3 - Interaction
 
 Sufficient for autonomous agent-to-agent interaction.
 
@@ -144,7 +144,7 @@ Claims SHALL be verifiable by the ACI Validator.
 
 > Example: "We are ACI Level 2 compliant."
 
-This is preferable to "we're halfway implemented" — it signals a specific, testable capability
+This is preferable to "we're halfway implemented" - it signals a specific, testable capability
 boundary.
 
 ---
@@ -240,11 +240,11 @@ dig TXT _aci.example.com +short
 
 Agents SHOULD attempt the following discovery mechanisms in order:
 
-1. **`/.well-known/aci`** — Fastest single-fetch resolution. All manifest URLs in one call.
-2. **`llms.txt`** — Falls back to the community-standard entry point.
-3. **DNS TXT record** — Pre-HTTP discovery at `_aci.<domain>`. Useful for agents that
+1. **`/.well-known/aci`** - Fastest single-fetch resolution. All manifest URLs in one call.
+2. **`llms.txt`** - Falls back to the community-standard entry point.
+3. **DNS TXT record** - Pre-HTTP discovery at `_aci.<domain>`. Useful for agents that
    perform bulk domain reconnaissance.
-4. **Other mechanisms** — `sitemap.xml`, `<link>` tags in HTML `<head>`, or custom
+4. **Other mechanisms** - `sitemap.xml`, `<link>` tags in HTML `<head>`, or custom
    discovery protocols.
 
 An agent MAY stop at the first successful mechanism. An agent SHOULD validate that the
@@ -261,7 +261,7 @@ agent that discovers any single manifest to navigate to the full set.
 
 ### 5.1 Purpose
 
-Declares who the organization is. This is the foundation — every other manifest references an
+Declares who the organization is. This is the foundation - every other manifest references an
 identity.
 
 ### 5.2 Required Fields
@@ -271,7 +271,7 @@ identity.
 | `manifest_version` | MUST be present. Version of the ACI specification (§14). |
 | `last_updated` | MUST be present. ISO 8601 timestamp of last change. |
 | `publisher` | MUST be present. Legal name of the publishing organization. |
-| `identifiers` | MUST be present. Array of canonical identifiers (§10) — at least one MUST be a stable, globally unique identifier (e.g., domain name, ABN, DUNS, LEI). |
+| `identifiers` | MUST be present. Array of canonical identifiers (§10) - at least one MUST be a stable, globally unique identifier (e.g., domain name, ABN, DUNS, LEI). |
 
 ### 5.3 Optional Fields
 
@@ -318,9 +318,9 @@ for an agent to evaluate relevance.
 
 At least one of the following content blocks SHOULD be present:
 
-- `products` — Array of product descriptions
-- `services` — Array of service descriptions
-- `solutions` — Array of solution descriptions
+- `products` - Array of product descriptions
+- `services` - Array of service descriptions
+- `solutions` - Array of solution descriptions
 
 ### 6.5 Example
 
@@ -352,7 +352,7 @@ relationships, enabling an agent to reason about the organization's area of expe
 
 ### 7.4 Content Blocks
 
-- `concepts` — Array of concept definitions (SHOULD be present for Level 2)
+- `concepts` - Array of concept definitions (SHOULD be present for Level 2)
 
 ### 7.5 Example
 
@@ -387,7 +387,7 @@ other evidence that an agent can evaluate to establish trust.
 
 ### 8.4 Content Blocks
 
-- `assertions` — Array of trust assertions (SHOULD be present for Level 2)
+- `assertions` - Array of trust assertions (SHOULD be present for Level 2)
 
 ### 8.5 Example
 
@@ -419,7 +419,7 @@ authentication methods, and interaction models for agent-to-agent communication.
 
 ### 9.4 Content Blocks
 
-- `agents` — Array of agent declarations (SHOULD be present for Level 3)
+- `agents` - Array of agent declarations (SHOULD be present for Level 3)
 
 Each agent declaration SHOULD include:
 
@@ -600,23 +600,23 @@ At that point, the steward SHALL promote the specification to **v1.0**.
 
 ACI deliberately does NOT address the following:
 
-1. **Not a replacement for human-facing websites** — ACI supplements, not replaces, existing
+1. **Not a replacement for human-facing websites** - ACI supplements, not replaces, existing
    web presence
-2. **Not an API specification** — ACI describes *what* an organization offers, not *how* to
+2. **Not an API specification** - ACI describes *what* an organization offers, not *how* to
    call its APIs (use OpenAPI for that)
-3. **Not a data model for internal systems** — ACI is a public self-description, not an
+3. **Not a data model for internal systems** - ACI is a public self-description, not an
    internal schema
-4. **Not a trust framework** — ACI provides a format for trust claims, but does not verify
+4. **Not a trust framework** - ACI provides a format for trust claims, but does not verify
    them. External attestation mechanisms handle verification
-5. **Not a contract negotiation protocol** — ACI does not define how agents negotiate terms
-6. **Not a payment or billing standard** — ACI describes offerings, not transactions
-7. **Not a replacement for Schema.org** — Schema.org provides general web markup; ACI provides
+5. **Not a contract negotiation protocol** - ACI does not define how agents negotiate terms
+6. **Not a payment or billing standard** - ACI describes offerings, not transactions
+7. **Not a replacement for Schema.org** - Schema.org provides general web markup; ACI provides
    structured organizational contracts for autonomous agents
-8. **Not a replacement for MCP (Model Context Protocol)** — MCP connects agents to tools and
+8. **Not a replacement for MCP (Model Context Protocol)** - MCP connects agents to tools and
    data; ACI describes organizations. They are complementary
-9. **Not a registry** — ACI does not require a central registry, though one may be built on
+9. **Not a registry** - ACI does not require a central registry, though one may be built on
    top of the specification
-10. **Not a legal framework** — ACI manifests are self-descriptions, not legally binding contracts
+10. **Not a legal framework** - ACI manifests are self-descriptions, not legally binding contracts
 
 ---
 
@@ -717,9 +717,9 @@ A valid ACI reference implementation MUST:
 
 The following tools are published as open source:
 
-- **ACI Validator** — CLI tool for validating ACI implementations (`aci validate`)
-- **ACI Template** — Starter template for organizations adopting ACI
-- **JSON Schemas** — Machine-readable schema definitions for all five manifests
+- **ACI Validator** - CLI tool for validating ACI implementations (`aci validate`)
+- **ACI Template** - Starter template for organizations adopting ACI
+- **JSON Schemas** - Machine-readable schema definitions for all five manifests
 
 ### 18.4 Adoption
 
@@ -741,12 +741,12 @@ package but maintained separately from the normative content.
 | [GOVERNANCE.md](./GOVERNANCE.md) | Who owns ACI, decision-making, and long-term stewardship |
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | How to propose changes, report issues, and participate |
 | [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) | Community standards and expectations |
-| [CHANGE_PROCESS.md](./CHANGE_PROCESS.md) | How the specification evolves — RFC process, review, and approval |
+| [CHANGE_PROCESS.md](./CHANGE_PROCESS.md) | How the specification evolves - RFC process, review, and approval |
 
 These documents answer *who owns ACI* and *how it changes*. The specification itself answers
 *what ACI is*. They are separated so that the normative content remains independent of any
 particular governance model. If governance is transferred to a foundation or standards body
-in the future, only the governance files need to change — the specification stays intact.
+in the future, only the governance files need to change - the specification stays intact.
 
 ---
 
@@ -779,7 +779,7 @@ https://empirelabs.com.au/llms.txt
   "website": "https://empirelabs.com.au",
   "contact": "contact@empirelabs.com.au",
   "brand": "Empire Labs",
-  "description": "Autonomous Operations Systems Engineering — building infrastructure for governed autonomous systems",
+  "description": "Autonomous Operations Systems Engineering - building infrastructure for governed autonomous systems",
   "identifiers": [
     {
       "id": "org.empire-labs",
@@ -986,12 +986,12 @@ This specification is published under the Creative Commons Attribution 4.0 Inter
 
 ## See Also
 
-- [GOVERNANCE.md](./GOVERNANCE.md) — Who owns ACI, decision-making, and long-term stewardship
-- [CONTRIBUTING.md](./CONTRIBUTING.md) — How to propose changes and participate
-- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) — Community standards and expectations
-- [CHANGE_PROCESS.md](./CHANGE_PROCESS.md) — RFC process for specification evolution
+- [GOVERNANCE.md](./GOVERNANCE.md) - Who owns ACI, decision-making, and long-term stewardship
+- [CONTRIBUTING.md](./CONTRIBUTING.md) - How to propose changes and participate
+- [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) - Community standards and expectations
+- [CHANGE_PROCESS.md](./CHANGE_PROCESS.md) - RFC process for specification evolution
 
 ---
 
-*Autonomous Company Interface (ACI) — Draft Specification v0.9*
+*Autonomous Company Interface (ACI) - Draft Specification v0.9*
 *Reference Implementation: Empire Labs (https://empirelabs.com.au)*

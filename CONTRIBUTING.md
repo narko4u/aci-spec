@@ -10,8 +10,8 @@
 
 ### Report a Bug or Issue
 
-If you find a problem with the specification — an inconsistency, a missing edge
-case, or something that doesn't make sense — open an issue in the aci-spec
+If you find a problem with the specification - an inconsistency, a missing edge
+case, or something that doesn't make sense - open an issue in the aci-spec
 repository. Include:
 
 - The section and version affected
@@ -40,7 +40,7 @@ specification is implementable. To register:
 
 ### Improve Documentation
 
-Editorial improvements — better examples, clearer language, fixed typos — are
+Editorial improvements - better examples, clearer language, fixed typos - are
 always welcome. Submit a pull request with a clear description of what changed
 and why.
 
