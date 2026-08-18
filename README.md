@@ -96,6 +96,20 @@ ACI is one layer of a complete stack for autonomous agent commerce:
 | Deployment template | [narko4u/aci-pages-template](https://github.com/narko4u/aci-pages-template) |
 | Live implementation | [empirelabs.com.au](https://empirelabs.com.au) |
 
+## Verifying releases
+
+Each release ships a `SHA256SUMS` file listing the hashes of every release
+asset. To verify that a downloaded asset matches the published release:
+
+```sh
+sha256sum -c SHA256SUMS
+```
+
+The `SHA256SUMS` file is attached to the GitHub release (see the
+[Releases](https://github.com/narko4u/aci-spec/releases) page). Tagged
+releases are named per their draft version (for example `draft-v0.9`), so
+release assets are always associated with an explicit release identifier.
+
 ---
 
 ## 🍻 Buy the Empire a Pint
