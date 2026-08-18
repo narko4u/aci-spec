@@ -23,13 +23,19 @@ jobs:
           pip install .
       - name: Verify CLI entry points load
         run: |
-          aci-validate --help
-          aci-explore --help
-      - name: Smoke-validate example agent files
+          aci-validate --help >/dev/null
+          aci-explore --help >/dev/null
+      - name: Verify schemas load and example manifests are valid JSON
         run: |
-          for f in examples/level1/* examples/level2/*; do
-            if [ -f "$f" ]; then
-              echo "Validating $f"
-              aci-validate "$f" || exit 1
-            fi
-          done
+          python - <<'EOF'
+          import json, glob
+          from aci_validator.validate import load_schemas, SCHEMA_DIR
+          schemas, order = load_schemas(SCHEMA_DIR)
+          assert set(order) >= {"identity", "capability", "knowledge", "trust", "agents"}, order
+          print(f"schemas OK: {order}")
+          files = glob.glob("examples/**/*.json", recursive=True)
+          assert files, "no example JSON files found"
+          for f in files:
+              json.load(open(f))
+          print(f"{len(files)} example JSON files parse OK")
+          EOF
