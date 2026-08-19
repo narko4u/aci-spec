@@ -57,6 +57,42 @@ and why.
 
 ---
 
+## Running tests
+
+Validation runs automatically on **every pull request and every push to
+`main`** via the `CI` workflow
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), across Python
+3.10, 3.11 and 3.12. The suite covers:
+
+- All example manifests under `examples/` parse as valid JSON
+- All schemas under `schema/` load, including the five core manifest types
+- The `aci-validate` and `aci-explore` CLI entry points load
+
+Run the same checks locally before opening a PR:
+
+```sh
+python -m pip install -e .
+aci-validate --help >/dev/null
+aci-explore --help >/dev/null
+python - <<'EOF'
+import json, glob
+from aci_validator.validate import load_schemas, SCHEMA_DIR
+schemas, order = load_schemas(SCHEMA_DIR)
+assert set(order) >= {"identity", "capability", "knowledge", "trust", "agents"}, order
+files = glob.glob("examples/**/*.json", recursive=True)
+assert files, "no example JSON files found"
+for f in files:
+    json.load(open(f))
+print(f"OK: {len(files)} example manifests valid")
+EOF
+```
+
+The full policy — when tests run, what the suite covers, and the
+requirement that major changes add or update validation coverage — is
+documented in [TESTING.md](TESTING.md).
+
+---
+
 ## Code of Conduct
 
 All participants SHALL follow the Code of Conduct (see CODE_OF_CONDUCT.md).
