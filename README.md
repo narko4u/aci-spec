@@ -59,6 +59,21 @@ python3 demo/aci-explorer.py empirelabs.com.au
 python3 validator/validate.py https://your-org.github.io/your-site
 ```
 
+**Option E - Build from source:**
+
+```bash
+git clone https://github.com/narko4u/aci-spec.git
+cd aci-spec
+python -m venv .venv
+.venv/bin/pip install --upgrade pip
+.venv/bin/pip install .
+```
+
+The build uses standard PEP 517 tooling (`setuptools>=64`); no external
+system libraries are required. Python 3.9+ is supported. After building, the
+`aci-validate` and `aci-explore` CLI entry points are available in the
+virtualenv.
+
 ---
 
 ## Contents
@@ -97,6 +112,30 @@ ACI is one layer of a complete stack for autonomous agent commerce:
 | Example implementations | [examples/](./examples/) |
 | Deployment template | [narko4u/aci-pages-template](https://github.com/narko4u/aci-pages-template) |
 | Live implementation | [empirelabs.com.au](https://empirelabs.com.au) |
+
+## Dependencies
+
+- **Runtime**: zero external dependencies. The validator, explorer, and
+  authoring tooling run on the Python standard library only.
+- **Build**: `setuptools>=64` (PEP 517 backend).
+
+### Dependency management
+
+The project follows a deliberate, minimal dependency policy:
+
+1. **Selection** - dependencies are avoided unless a standard-library
+   alternative does not exist. The reference implementation currently has
+   zero runtime dependencies.
+2. **Obtaining** - dependencies are declared in `pyproject.toml` and pinned
+   through the `uv.lock` lockfile, so every build uses a reproducible set of
+   package versions.
+3. **Tracking** - dependencies are monitored three ways:
+   - **SCA**: every push/PR runs [OSV-Scanner](https://google.github.io/osv-scanner/)
+     in the `security` workflow to detect known vulnerabilities in the lockfile.
+   - **SBOM**: every release ships a CycloneDX SBOM (`sbom.cdx.json`) listing
+     the exact dependency set of the released artifact.
+   - **Integrity**: every release asset ships with a Sigstore signature and a
+     `SHA256SUMS` checksum manifest (see [Verifying releases](#verifying-releases)).
 
 ## Verifying releases
 
