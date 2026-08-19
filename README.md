@@ -1,5 +1,7 @@
 # Autonomous Company Interface (ACI)
 
+[![OpenSSF Best Practices - Baseline 1](https://www.bestpractices.dev/projects/14141/badge)](https://www.bestpractices.dev/projects/14141)
+
 **Status:** Draft Specification v0.9
 
 [![PyPI version](https://img.shields.io/pypi/v/aci-spec?color=blue)](https://pypi.org/project/aci-spec/)
