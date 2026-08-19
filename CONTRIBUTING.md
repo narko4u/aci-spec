@@ -93,6 +93,31 @@ documented in [TESTING.md](TESTING.md).
 
 ---
 
+## Developer Certificate of Origin (DCO)
+
+Every contributor must certify that they are legally authorized to make their
+contributions under the project's license, in accordance with the
+[Developer Certificate of Origin](https://developercertificate.org/) (DCO).
+
+To certify, add a `Signed-off-by` trailer to each commit:
+
+```text
+Signed-off-by: Your Name <your@email.example>
+```
+
+The trailer is normally added automatically with:
+
+```bash
+git commit -s
+```
+
+The CI pipeline verifies that every commit in a pull request carries a
+`Signed-off-by` trailer (see the `dco` job in `.github/workflows/ci.yml`);
+pull requests without it will fail CI. If you are contributing on behalf of
+an employer or client, ensure you are authorized to do so under the DCO.
+
+---
+
 ## Code of Conduct
 
 All participants SHALL follow the Code of Conduct (see CODE_OF_CONDUCT.md).
