@@ -70,8 +70,8 @@ jobs:
           set -euo pipefail
           for asset in dist/*; do
             cosign sign-blob --yes \
-              --certificate "$asset.pem" \
-              --signature "$asset.sig" \
+              --output-certificate "$asset.pem" \
+              --output-signature "$asset.sig" \
               "$asset"
           done
 
