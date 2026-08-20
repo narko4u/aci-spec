@@ -1,6 +1,6 @@
 # Autonomous Company Interface (ACI)
 
-[![OpenSSF Best Practices - Baseline 1](https://www.bestpractices.dev/projects/14141/badge)](https://www.bestpractices.dev/projects/14141)
+[![OpenSSF Best Practices - Baseline 3](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fwww.bestpractices.dev%2Fprojects%2F14141.json&query=badge_percentage_baseline_3&label=OpenSSF%20Baseline%203)](https://www.bestpractices.dev/projects/14141)
 
 **Status:** Draft Specification v0.9
 
