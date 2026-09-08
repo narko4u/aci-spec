@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# ACI (Agent Communication Interface)
+# Copyright (c) 2026 Empire Labs Pty Ltd
+# SPDX-License-Identifier: MIT
+
 """
 |ACI Explorer — CLI demo of Autonomous Company Interface discovery in action.
 
