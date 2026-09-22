@@ -216,6 +216,19 @@ If ACI helps your agents discover and trust organizations, buy the Empire a pint
 
 ---
 
+## Acknowledgements
+
+The validator included here has exactly one third-party runtime dependency:
+[PyYAML](https://pyyaml.org/), used to parse manifest documents. PyYAML is an
+independent project with its own maintainers and release process, credited here
+as a dependency; its inclusion implies no review or endorsement of this
+specification.
+
+No other third-party code is included. The specification text is licensed
+CC BY 4.0; the validator, schemas, examples and explorer are MIT.
+
+---
+
 ## License
 
 **CC BY 4.0** (specification) / **MIT** (validator, schemas, examples, explorer)
