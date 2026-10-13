@@ -233,7 +233,7 @@ CC BY 4.0; the validator, schemas, examples and explorer are MIT.
 
 **CC BY 4.0** (specification) / **MIT** (validator, schemas, examples, explorer)
 
-*Built by Empire Labs Pty Ltd | Maintained by **Edward Wade***
+*Built and maintained by Security Division, Empire Labs Pty Ltd*
 
 
 ---
